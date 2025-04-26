@@ -198,4 +198,4 @@ for (const tea of myFavoriteTeas) {
   }
 }
 
-console.log(shortTeas);
+// console.log(shortTeas);
