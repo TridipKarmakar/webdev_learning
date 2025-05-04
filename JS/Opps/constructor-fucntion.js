@@ -93,4 +93,4 @@ const CAR2 = new car("TATA", "Safari", 2007);
 CAR1.year = 2003; // update a property
 delete CAR1.year; // delete a property
 
-// console.log(CAR1);
+console.log(CAR1);
