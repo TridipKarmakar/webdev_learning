@@ -49,15 +49,16 @@ sendNotification(SMS1);
 
 /*
 [Easy]
-Add a base Notification type. Both Email and SMS should inherit from it and override send().
+Add a base Notification type. Both Email and SMS should inherit from it and override send(). same as above */
 
-
-
-
+/*
 
 [Intermediate]
 I want to be able to keep all notification types in an array and loop through them, calling send() polymorphically.
 
+*/
+
+/*
 [Advanced]
 Add a new PushNotification type. Ensure it integrates seamlessly into the same system with its own send() logic.
 
