@@ -145,8 +145,14 @@ class Contractor extends Person {
   }
 }
 
+function printProfile(personObj) {
+  console.log(personObj.getDetails());
+}
+
 const emp = new Employee("Tridip", 26, "Executive");
 const mgr = new Manager("Amit", 35, "Team Lead", 10);
 const cont = new Contractor("Suman", 30, "HOD", 12);
 
-console.log(cont.getDetails());
+printProfile(emp);
+printProfile(mgr);
+printProfile(cont);
