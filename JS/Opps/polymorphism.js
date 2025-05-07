@@ -95,4 +95,4 @@ function NotificationManager(notificationsList) {
   }
 }
 
-NotificationManager(notifications);
+// NotificationManager(notifications);
