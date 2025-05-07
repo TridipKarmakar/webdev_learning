@@ -44,9 +44,35 @@ let bulb1 = new LightSwitch();
 Add a Thermostat object with methods like setTemperature(), but the heating mechanism should remain abstracted.
  */
 
-// class Thermostat {
-//     setTemperature
-// }
+class Thermostat {
+  #currentTemperature;
+  #targetTemperature;
+
+  constructor() {
+    this.#currentTemperature = 20;
+    this.#targetTemperature = 24;
+  }
+  //this is the public function
+  setTemperature(temperature) {
+    this.#targetTemperature = temperature;
+    console.log(`🌡️ Target temperature set to ${this.#targetTemperature}°C`);
+    this.#heatingMechanism();
+  }
+
+  //this is the private function
+  #heatingMechanism() {
+    if (this.#currentTemperature < this.#targetTemperature) {
+      console.log(
+        "🔥 Heater is ON. Warming up the room... \n✅ Desired temperature will be maintained."
+      );
+    } else {
+      console.log("🌬️ Room already at or above target temperature.");
+    }
+  }
+}
+
+let setTemp = new Thermostat();
+setTemp.setTemperature(45);
 
 /* [Intermediate]
 Design a SecuritySystem object. I just need arm() and disarm() methods. The rest should be internal.
