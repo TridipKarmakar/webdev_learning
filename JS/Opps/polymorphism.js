@@ -44,8 +44,8 @@ function sendNotification(notificationObj) {
 let Email1 = new Email("tridiplaymakar97@gmail.com");
 let SMS1 = new SMS("+91 84799-83303");
 
-sendNotification(Email1);
-sendNotification(SMS1);
+// sendNotification(Email1);
+// sendNotification(SMS1);
 
 /*
 [Easy]
@@ -58,10 +58,41 @@ I want to be able to keep all notification types in an array and loop through th
 
 */
 
+const notifications = [
+  new Email("tridiplaymakar97@gmail.com"),
+  new SMS("+91 84799-83303"),
+];
+
+// for (let i = 0; i < notifications.length; i++) {
+//   sendNotification(notifications[i]);
+// }
+
 /*
 [Advanced]
 Add a new PushNotification type. Ensure it integrates seamlessly into the same system with its own send() logic.
+*/
 
+class PushNotification extends Notification {
+  constructor(recipient) {
+    super(recipient);
+  }
+  send() {
+    return `Hi ${this.recipient}, You have got new massage in whatsapp, Check Now!`;
+  }
+}
+
+notifications.push(new PushNotification("Tridip"));
+// sendNotification(notifications[notifications.length - 1]);
+
+/*
 [Expert]
 Create a NotificationManager function that accepts a list of mixed notifications and sends each of them using their polymorphic send() method.
  */
+
+function NotificationManager(notificationsList) {
+  for (let i = 0; i < notificationsList.length; i++) {
+    sendNotification(notificationsList[i]);
+  }
+}
+
+NotificationManager(notifications);
