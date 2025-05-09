@@ -17,3 +17,11 @@ Allow locking of a BankAccount. Once locked, it should block further deposits or
 Create a TransactionManager that keeps a private transaction log. Expose only addTransaction() and getSummary().
 
  */
+
+function log() {
+  const timeStamp = new Date().toISOString();
+  return timeStamp;
+}
+
+const timeStamp = log();
+console.log(timeStamp);
