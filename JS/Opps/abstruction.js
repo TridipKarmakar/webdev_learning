@@ -195,7 +195,7 @@ class SmartHomeController {
 }
 
 const smartHome = new SmartHomeController();
-smartHome.runScenario("day");
+// smartHome.runScenario("day");
 
 /* [Expert]
 Expose an external API object that lets third-party apps interact only with high-level smart-home commands like lockDoors(), startCleaning(), hiding all internal class logic.
