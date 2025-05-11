@@ -200,3 +200,29 @@ const smartHome = new SmartHomeController();
 /* [Expert]
 Expose an external API object that lets third-party apps interact only with high-level smart-home commands like lockDoors(), startCleaning(), hiding all internal class logic.
  */
+
+class DoorLock {
+  lock() {}
+
+  unlock() {}
+}
+
+class SmartVacuum {
+  turnOn() {}
+
+  turnOn() {}
+}
+
+class SmartHome {
+  #doorLock;
+  #vacuum;
+
+  constructor() {
+    this.doorLock = new DoorLock();
+    this.SmartVacuum = new SmartHome();
+  }
+
+  lockDoors() {} // if check status is on and input is unlock then open else stay remain or ask for the should i closed the door ? Yes or No
+
+  smartClean() {} // Check if cleaner is onn then ask the permission to off else remain onn.
+}
