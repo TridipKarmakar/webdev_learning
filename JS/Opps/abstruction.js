@@ -202,15 +202,43 @@ Expose an external API object that lets third-party apps interact only with high
  */
 
 class DoorLock {
-  lock() {}
+  #DoorStatus = false;
 
-  unlock() {}
+  lock() {
+    if (!this.#DoorStatus) {
+      this.#DoorStatus = true;
+      console.log("🔒 Door locked.");
+    } else {
+      console.log("🚪 Door is already locked.");
+    }
+  }
+
+  unlock() {
+    if (this.#DoorStatus) {
+      this.#DoorStatus = false;
+      console.log("🔓 Door is now unlocked.");
+    }
+  }
 }
 
 class SmartVacuum {
-  turnOn() {}
+  #vacuumStatus = true;
 
-  turnOn() {}
+  start() {
+    if (!this.#vacuumStatus) {
+      this.#vacuumStatus = true;
+      console.log("🧹 Robot started cleaning.");
+    } else {
+      console.log("🧹 Robot has already in the cleaning process.");
+    }
+  }
+
+  stop() {
+    if (this.#vacuumStatus) {
+      this.#vacuumStatus = false;
+      console.log("🛑 Robot stopped cleaning.");
+    }
+  }
 }
 
 class SmartHome {
@@ -218,11 +246,25 @@ class SmartHome {
   #vacuum;
 
   constructor() {
-    this.doorLock = new DoorLock();
-    this.SmartVacuum = new SmartHome();
+    this.#doorLock = new DoorLock();
+    this.#vacuum = new SmartVacuum();
   }
 
-  lockDoors() {} // if check status is on and input is unlock then open else stay remain or ask for the should i closed the door ? Yes or No
-
-  smartClean() {} // Check if cleaner is onn then ask the permission to off else remain onn.
+  lockDoors() {
+    this.#doorLock.lock();
+  }
+  unlockDoors() {
+    this.#doorLock.unlock();
+  }
+  startClean() {
+    this.#vacuum.start();
+  }
+  stopClean() {
+    this.#vacuum.stop();
+  }
 }
+let Door = new SmartHome();
+Door.lockDoors();
+
+let vacuum = new SmartHome();
+vacuum.startClean();
