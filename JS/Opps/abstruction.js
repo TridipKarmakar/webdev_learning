@@ -202,7 +202,7 @@ Expose an external API object that lets third-party apps interact only with high
  */
 
 class DoorLock {
-  #DoorStatus = false;
+  #DoorStatus = false; // this is the also example of encapsulation
 
   lock() {
     if (!this.#DoorStatus) {
