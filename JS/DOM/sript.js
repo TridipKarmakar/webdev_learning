@@ -24,3 +24,9 @@ document.getElementById("addNewItem").addEventListener("click", () => {
   newItem.textContent = "Eggs";
   let coffeeType = document.getElementById("shoppingList").appendChild(newItem);
 });
+
+// example 5
+document.getElementById("removeLastTask").addEventListener("click", () => {
+  let taskList = document.getElementById("taskList");
+  taskList.lastElementChild.remove();
+});
