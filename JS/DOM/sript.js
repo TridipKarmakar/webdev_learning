@@ -17,3 +17,10 @@ document.getElementById("ChangeOrder").addEventListener("click", () => {
   coffeeType.style.backgroundColor = "brown";
   coffeeType.style.backgroundColor = "5px";
 });
+
+// example 4
+document.getElementById("addNewItem").addEventListener("click", () => {
+  let newItem = document.createElement("li");
+  newItem.textContent = "Eggs";
+  let coffeeType = document.getElementById("shoppingList").appendChild(newItem);
+});
