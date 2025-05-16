@@ -30,3 +30,31 @@ document.getElementById("removeLastTask").addEventListener("click", () => {
   let taskList = document.getElementById("taskList");
   taskList.lastElementChild.remove();
 });
+
+//example 6
+
+document
+  .getElementById("clickMeButton")
+  .addEventListener("dblclick", function () {
+    alert("chai code");
+  });
+
+//example 7
+
+document.getElementById("teaList").addEventListener("click", function (event) {
+  if (event.target && event.target.matches(".teaItem")) {
+    alert("You selected: " + event.target.textContent);
+  }
+});
+
+// example 8
+document
+  .getElementById("feedbackForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+    let feedback = document.getElementById("feedbackInput").value;
+    console.log(feedback);
+    document.getElementById(
+      "feedbackDisplay"
+    ).textContent = `Feedback is :${feedback}`;
+  });
