@@ -21,3 +21,10 @@ document.getElementById("ChangeOrder").addEventListener("click", () => {
   ChangeOrder.classList.add("highlight"); // this the add the style of css style code
   ChangeOrder.style.backgroundColor = "green";
 });
+
+// example 4
+document.getElementById("addNewItem").addEventListener("click", function () {
+  let newList = document.createElement("li");
+  newList.textContent = "Eggs";
+  document.getElementById("shoppingList").appendChild(newList);
+});
