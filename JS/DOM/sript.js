@@ -28,3 +28,10 @@ document.getElementById("addNewItem").addEventListener("click", function () {
   newList.textContent = "Eggs";
   document.getElementById("shoppingList").appendChild(newList);
 });
+
+// example 5
+
+document.getElementById("example-5").addEventListener("click", function () {
+  let taskList = document.getElementById("taskList");
+  taskList.lastElementChild.remove();
+});
