@@ -35,3 +35,17 @@ document.getElementById("example-5").addEventListener("click", function () {
   let taskList = document.getElementById("taskList");
   taskList.lastElementChild.remove();
 });
+
+// example 6
+
+document.getElementById("clickMeButton").addEventListener("click", function () {
+  alert("Button is now clicked !");
+});
+
+// example 7
+
+document.getElementById("teaList").addEventListener("click", function (event) {
+  if (event.target && event.target.matches(".teaItem")) {
+    alert("You have selected : " + event.target.textContent);
+  }
+});
