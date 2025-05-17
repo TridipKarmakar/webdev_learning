@@ -5,22 +5,10 @@ document.getElementById("changeTextButton").addEventListener("click", () => {
 });
 
 // example 2
-document.getElementById("highlightFirstCity").addEventListener("click", () => {
-  let citiesList = document.getElementById("citiesList");
-  citiesList.firstElementChild.classList.add("highlight");
-});
 
-// example 3
-document.getElementById("ChangeOrder").addEventListener("click", () => {
-  let coffeeType = document.getElementById("coffeeType");
-  coffeeType.textContent = "Espresso";
-  coffeeType.style.backgroundColor = "brown";
-  coffeeType.style.backgroundColor = "5px";
-});
-
-// example 4
-document.getElementById("addNewItem").addEventListener("click", () => {
-  let newItem = document.createElement("li");
-  newItem.textContent = "Eggs";
-  let coffeeType = document.getElementById("shoppingList").appendChild(newItem);
-});
+document
+  .getElementById("highlightFirstCity")
+  .addEventListener("click", function () {
+    let cityList = document.getElementById("citiesList");
+    console.log(cityList.firstElementChild.classList.add("highlight"));
+  });
