@@ -49,3 +49,17 @@ document.getElementById("teaList").addEventListener("click", function (event) {
     alert("You have selected : " + event.target.textContent);
   }
 });
+
+// example 8
+// in the form handling we can store the write the feedback, submit the feedback and store the feedback
+
+document
+  .getElementById("feedbackForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+    let feedback = document.getElementById("feedbackInput").value;
+    console.log(feedback);
+    document.getElementById(
+      "feedbackDisplay"
+    ).textContent = `Feedback is : ${feedback}`;
+  });
