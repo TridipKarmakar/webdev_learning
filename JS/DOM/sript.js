@@ -5,3 +5,5 @@ document
     let paragraphChanger = document.getElementById("myParagraph");
     paragraphChanger.textContent = "Changed the paragraph";
   });
+
+//example 2
