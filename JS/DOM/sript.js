@@ -68,3 +68,14 @@ document
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("domStatus").textContent = "DOM Fully Loaded";
 });
+
+//example 10
+
+document
+  .getElementById("toggleHighlight")
+  .addEventListener("click", function () {
+    let textElement = document.getElementById("descriptionText");
+    // textElement.style.backgroundColor = "yellow";
+    // textElement.style.color = "purple";
+    textElement.classList.toggle("highlight");
+  });
