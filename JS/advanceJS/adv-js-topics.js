@@ -28,6 +28,8 @@ function fetchData() {
 
 fetchData()
   .then((data) => {
-    console.log(data.toLowerCase());
+    // console.log(data.toLowerCase());
   })
-  .catch((error) => console.log(error));
+  .catch((error) => {
+    // console.log(error);
+  });
