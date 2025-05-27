@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <button>delete</button>
     `;
 
-    todoList.appendChild(li);
+    todoList.appendChild();
   }
 
   function saveTask() {
