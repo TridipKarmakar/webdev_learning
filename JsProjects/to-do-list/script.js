@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (taskText === "") return;
     const newTask = {
       id: Date.now(),
-      Text: taskText,
+      text: taskText,
       completed: false,
     };
     task.push(newTask);
@@ -22,7 +22,14 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function renderTask(task) {
-    console.log(task);
+    const li = document.createElement("li");
+    li.setAttribute("data-id", task.id);
+    li.innerHTML = `
+      <span>${task.text}</span>
+      <button>delete</button>
+      `;
+
+    todoList.appendChild(li);
   }
 
   function saveTask() {
