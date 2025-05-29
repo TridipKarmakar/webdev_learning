@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do list</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Add New Action Items</h1>
+
+      <div class="description">
+        <label for="todo-desc">Task Name</label>
+        <textarea
+          id="todo-desc"
+          name="description"
+          placeholder="Write your task details here..."
+        ></textarea>
+      </div>
+      <div class="input-container">
+        <div id="single-input">
+          <label for="todo-input">Assign To</label>
+          <input type="text" id="todo-input" placeholder="Doer Name" />
+        </div>
+        <div id="single-input">
+          <label for="todo-input">Due Date</label>
+          <input type="date" id="todo-input" placeholder="Due Date" />
+        </div>
+      </div>
+      <button id="todo-list">Add task</button>
+      <ul id="todo-list"></ul>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
