@@ -2,74 +2,138 @@
   margin: 0;
   padding: 0;
   border: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
 }
 
 body {
-  font-family: "Inter", sans-serif;
-  background-color: #121212;
-  color: #ffff;
   display: flex;
+  height: 100vh;
   justify-content: center;
   align-items: center;
-  height: 30vh;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
 
 .container {
-  background-color: #1e1e1e;
-  padding: 20px;
-  border-radius: 10px;
-  width: 1500px;
-  box-shadow: 0px 5px 15px rgb(0, 0, 0, 0.2);
+  max-width: 700px;
+  width: 100%;
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
 }
 
-h1 {
-  text-align: Left;
-  margin-bottom: 20px;
-  font-size: 24px;
+.container .title {
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
 }
 
-#todo-desc {
-  width: 50%; /* Fill the container */
-  height: 100px; /* Give vertical space */
-  padding: 10px; /* Space inside the box */
-  font-size: 16px; /* Clear and readable text */
-  background-color: #333333;
-  color: #ffff;
-  outline: none;
-  border: none;
-  border-radius: 4px;
-  resize: vertical; /* Let user resize vertically */
-  box-sizing: border-box;
+.container .title::before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
-.input-container {
+
+.container form .task-details {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  margin-bottom: 20px;
 }
 
-input[type="text"] {
-  width: 70%;
-  padding: 10px;
-  background-color: #333333;
+form .task-details .input-details {
+  margin: 20px 0 10px 0;
+  width: calc(100% / 2 - 20px);
+}
+.task-details .input-details .details {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.task-details .input-details textarea {
+  height: 100px; /* adjust as needed */
+  width: 100%;
   border-radius: 5px;
-  border: none;
   outline: none;
-  color: #ffff;
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  font-size: 16px;
+  resize: vertical; /* or 'none' if you want to fix size */
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
 }
-
-button {
-  margin-left: 10px;
-  width: 25%;
-  padding: 10px;
-  background-color: #6200ea;
-  border: none;
+.task-details .input-details input {
+  height: 45px;
+  width: 100%;
   border-radius: 5px;
-  color: #ffff;
-  cursor: pointer;
-  outline-color: none;
-  transition: background-color 0.3s;
+  outline: none;
+  border: 1px solid #ccc;
+  padding-left: 15px;
+  font-size: 16px;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
 }
 
-button:hover {
-  background-color: #3700b3;
+.task-details .input-details textarea:focus {
+  border-color: #9b59b6;
+}
+
+.task-details .input-details input:focus,
+.task-details .input-details input:valid {
+  border-color: #9b59b6;
+}
+
+.task-details .input-details select {
+  height: 45px;
+  width: 100%;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #ccc;
+  padding-left: 15px;
+  font-size: 16px;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+form .button {
+  height: 45px;
+  margin: 45px 0;
+}
+
+form .button input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  color: #fff;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border-radius: 5px;
+}
+
+form .button input:hover {
+  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+}
+
+@media (max-width: 584px) {
+  .container {
+    max-width: 100%;
+  }
+  form .task-details .input-details {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  .container form .task-details {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .task-details::-webkit-scrollbar {
+    width: 0;
+  }
 }

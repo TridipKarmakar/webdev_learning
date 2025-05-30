@@ -16,27 +16,57 @@
   </head>
   <body>
     <div class="container">
-      <h1>Add New Action Items</h1>
+      <div class="title">Add New Action Items</div>
+      <form action="#">
+        <div class="task-details">
+          <div class="input-details">
+            <span class="details">Project Name</span>
+            <input type="text" placeholder="Enter the project Name" required />
+          </div>
+          <div class="input-details">
+            <span class="details">Department Name</span>
+            <input
+              type="text"
+              placeholder="Enter the Department Name"
+              required
+            />
+          </div>
+          <div class="input-details">
+            <span class="details">Issue Description</span>
+            <textarea type="text" placeholder="Details..." required> </textarea>
+          </div>
+          <div class="input-details">
+            <span class="details">Responsible Person</span>
+            <input type="text" placeholder="Resp. Name" required />
+          </div>
+          <div class="input-details">
+            <span class="details">Target Date</span>
+            <input type="Date" placeholder="Enter Target Date" required />
+          </div>
 
-      <div class="description">
-        <label for="todo-desc">Task Name</label>
-        <textarea
-          id="todo-desc"
-          name="description"
-          placeholder="Write your task details here..."
-        ></textarea>
-      </div>
-      <div class="input-container">
-        <div id="single-input">
-          <label for="todo-input">Assign To</label>
-          <input type="text" id="todo-input" placeholder="Doer Name" />
+          <div class="input-details">
+            <span class="details">Status</span>
+            <select required>
+              <option value="" disabled selected>Select Status</option>
+              <option value="Pending">Pending</option>
+              <option value="Done">Done</option>
+            </select>
+          </div>
+          <div class="input-details">
+            <span class="details">Remarks</span>
+            <textarea
+              type="text"
+              placeholder="Enter the current status"
+              required
+            >
+            </textarea>
+          </div>
         </div>
-        <div id="single-input">
-          <label for="todo-input">Due Date</label>
-          <input type="date" id="todo-input" placeholder="Due Date" />
+
+        <div class="button">
+          <input type="submit" value="Add Action Items" />
         </div>
-      </div>
-      <button id="todo-list">Add task</button>
+      </form>
       <ul id="todo-list"></ul>
     </div>
   </body>
