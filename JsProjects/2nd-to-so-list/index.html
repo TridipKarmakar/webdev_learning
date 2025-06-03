@@ -15,60 +15,89 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="title">Add New Action Items</div>
-      <form action="#">
-        <div class="task-details">
-          <div class="input-details">
-            <span class="details">Project Name</span>
-            <input type="text" placeholder="Enter the project Name" required />
-          </div>
-          <div class="input-details">
-            <span class="details">Department Name</span>
-            <input
-              type="text"
-              placeholder="Enter the Department Name"
-              required
-            />
-          </div>
-          <div class="input-details">
-            <span class="details">Issue Description</span>
-            <textarea type="text" placeholder="Details..." required> </textarea>
-          </div>
-          <div class="input-details">
-            <span class="details">Present Comment</span>
-            <textarea
-              type="text"
-              placeholder="Enter the current status"
-              required
-            >
-            </textarea>
+    <div class="page-wrapper">
+      <div class="container">
+        <div class="title">Add New Action Items</div>
+        <form action="#">
+          <div class="task-details">
+            <div class="input-details">
+              <span class="details">Project Name</span>
+              <input
+                type="text"
+                placeholder="Enter the project Name"
+                required
+              />
+            </div>
+            <div class="input-details">
+              <span class="details">Department Name</span>
+              <input
+                type="text"
+                placeholder="Enter the Department Name"
+                required
+              />
+            </div>
+            <div class="input-details">
+              <span class="details">Issue Description</span>
+              <textarea type="text" placeholder="Details..." required>
+              </textarea>
+            </div>
+            <div class="input-details">
+              <span class="details">Present Comment</span>
+              <textarea
+                type="text"
+                placeholder="Enter the current status"
+                required
+              >
+              </textarea>
+            </div>
+
+            <div class="input-details">
+              <span class="details">Responsible Person</span>
+              <input type="text" placeholder="Resp. Name" required />
+            </div>
+            <div class="input-details">
+              <span class="details">Target Date</span>
+              <input type="Date" placeholder="Enter Target Date" required />
+            </div>
+
+            <div class="input-details">
+              <span class="details">Status</span>
+              <select required>
+                <option value="" disabled selected>Select Status</option>
+                <option value="Pending">Pending</option>
+                <option value="Done">Done</option>
+              </select>
+            </div>
           </div>
 
-          <div class="input-details">
-            <span class="details">Responsible Person</span>
-            <input type="text" placeholder="Resp. Name" required />
+          <div class="button">
+            <input type="submit" value="Add Action Items" />
           </div>
-          <div class="input-details">
-            <span class="details">Target Date</span>
-            <input type="Date" placeholder="Enter Target Date" required />
-          </div>
-
-          <div class="input-details">
-            <span class="details">Status</span>
-            <select required>
-              <option value="" disabled selected>Select Status</option>
-              <option value="Pending">Pending</option>
-              <option value="Done">Done</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="button">
-          <input type="submit" value="Add Action Items" />
-        </div>
-      </form>
-      <ul id="todo-list"></ul>
+        </form>
+      </div>
+      <div class="table-container">
+        <table
+          id="actionTable"
+          border="1"
+          style="width: 100%; margin-top: 20px"
+        >
+          <thead>
+            <tr>
+              <th>Sl.No</th>
+              <th>Date</th>
+              <th>Log Code</th>
+              <th>Project Name</th>
+              <th>Department</th>
+              <th>Issue</th>
+              <th>Comment</th>
+              <th>Responsible</th>
+              <th>Target Date</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
     </div>
   </body>
   <script src="script.js"></script>
