@@ -1,1 +1,4 @@
 @import "tailwindcss";
+.completed {
+  @apply line-through opacity-70 text-gray-400;
+}

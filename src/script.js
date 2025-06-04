@@ -23,8 +23,30 @@ addTaskButton.addEventListener("click", () => {
 
 function renderTask(task) {
   const li = document.createElement("li");
-  //   li.setAttribute("data-id", task.id);
-  //   if (task.completed) li.classList.add("line-through opacity-70 text-gray-700");
-  li.innerHTML = `<span class="bg-[#333333] p-2.5 mb-2.5 flex justify-between items-center rounded-sm">${task.text}</span>`;
+  li.setAttribute("data-id", task.id);
+  li.className =
+    "bg-[#333333] p-2.5 mb-2.5 flex justify-between items-center rounded-sm";
+  const span = document.createElement("span");
+  span.textContent = task.text;
+
+  const deleteBtn = document.createElement("button");
+  deleteBtn.textContent = "Delete";
+  deleteBtn.className =
+    "text-sm bg-red-600 text-white px-3 py-2 rounded-sm cursor-pointer";
+
+  li.appendChild(span);
+  li.appendChild(deleteBtn);
   todoList.appendChild(li);
+
+  li.addEventListener("click", (e) => {
+    if (e.target.tagName === "BUTTON") return;
+    task.completed = !task.completed;
+    span.classList.toggle("line-through");
+    span.classList.toggle("opacity-70");
+    span.classList.toggle("text-gray-400");
+  });
+
+  li.querySelector("button").addEventListener("click", (e) => {
+    task = taskList.filter((t) => t.id !== task.id);
+  });
 }
