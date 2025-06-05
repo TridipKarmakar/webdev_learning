@@ -53,4 +53,4 @@ document.addEventListener("DOMContentLoaded", () => {
   function saveTask() {
     localStorage.setItem("task", JSON.stringify(taskList));
   }
-});
+}saveTask);

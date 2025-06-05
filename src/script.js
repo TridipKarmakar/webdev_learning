@@ -12,12 +12,13 @@ document.addEventListener("DOMContentLoaded", () => {
   addTaskButton.addEventListener("click", () => {
     const taskText = todoInput.value.trim();
     if (taskText == "") return;
-    const task = {
+    const newTask = {
       id: Date.now(),
       text: taskText,
       completed: false,
     };
-    taskList.push(task);
+    taskList.push(newTask);
+    renderTask(newTask);
     todoInput.value = "";
     console.log(taskList);
     saveTask();
