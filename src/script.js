@@ -47,6 +47,7 @@ function renderTask(task) {
   });
 
   li.querySelector("button").addEventListener("click", (e) => {
-    task = taskList.filter((t) => t.id !== task.id);
+    taskList = taskList.filter((t) => t.id !== task.id);
+    li.remove();
   });
 }
